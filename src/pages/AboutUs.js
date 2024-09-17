@@ -24,4 +24,4 @@ function AboutUs() {
     </div>
     );
 }
-export default AboutUs
+export default AboutUs;
