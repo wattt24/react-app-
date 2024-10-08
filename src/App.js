@@ -8,7 +8,11 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import NotPage from './pages/NotPage';
 import AboutUs from './pages/AboutUs';
+import Account from './pages/Account';
 import { AuthProvider, useAuth } from './AuthProvider';
+import MyBlog from './pages/MyBlog';
+import AddBlog from './pages/AddBlog';
+import EditBlog from './pages/EditBlog';
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuth();
   const location = useLocation();
@@ -41,10 +45,14 @@ function App() {
       <Routes>
         <Route element={<LayoutAdmin />}>
           <Route path='/' element={<Dashboard />} />
+          <Route path='/account' element={<Account />} />
           <Route path='/user' element={<Users />} />
           <Route path='/about' element={<AboutUs />} /> 
-          <Route path='*' element={<NotPage />} />
+          <Route path='/myblog' element={<MyBlog />} />
+          <Route path='/new-post' element={<AddBlog />} />
+          <Route path='/edit-post/:id' element={<EditBlog />} />
         </Route>
+        <Route path='*' element={<NotPage />} />
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>

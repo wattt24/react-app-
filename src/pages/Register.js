@@ -17,7 +17,7 @@ function Register() {
         return;
       } else {
       try {
-        const response = await axios.post('http://localhost:4000/register', {
+        const response = await axios.post('http://localhost:5000/register', {
           email,
           password,
           name
